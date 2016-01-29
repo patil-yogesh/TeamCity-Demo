@@ -1,6 +1,6 @@
 {
   "src_folders" : ["tests/"],
-  "output_folder" : "./output",
+  "output_folder" : "./output1",
   "selenium" : {
     "start_process" : false,
     "host" : "hub.browserstack.com",
