@@ -23,8 +23,8 @@
         "browserName": "firefox",
         "javascriptEnabled": true,
         "acceptSslCerts": true,
-        "browserstack.user": " ",
-        "browserstack.key": " ",
+        "browserstack.user": "yogeshpatil2",
+        "browserstack.key": "1qscJEiXnMdazFwW4ft3",
         "browserstack.debug" : "true"
       }
     }
