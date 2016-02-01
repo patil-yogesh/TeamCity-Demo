@@ -3,11 +3,10 @@
   "output_folder" : "./output",
   "selenium" : {
     "start_process" : false,
-    "start_session" : false,
+    "start_session" : true,
     "host" : "hub.browserstack.com",
     "port" : 80
   },
-
 
   "test_settings" : {
     "default" : {
