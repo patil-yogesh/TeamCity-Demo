@@ -8,6 +8,7 @@
     "port" : 80
   },
 
+
   "test_settings" : {
     "default" : {
       "launch_url" : "http://hub.browserstack.com",
