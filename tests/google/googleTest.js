@@ -1,6 +1,12 @@
+var sessionID = null;
+    
 module.exports = {
+  
+  after : function(browser) {
+    updateStatus(sessionID, "error", "error once again");
+  },
+
   "Demo test Google" : function (browser) {
-    var sessionID = null;
     browser
       .session(function(session) { sessionID = session.sessionID, console.log(session.sessionID) })
       .url("http://www.google.com")
@@ -10,10 +16,7 @@ module.exports = {
       .click('button[name=btnG]')
       .pause(1000)
       .assert.containsText('#main', 'The Night Watch 111')
-      .end();
-
-
-    updateStatus(sessionID, "error", "error once again");
+      .end();  
   }
 };
 
