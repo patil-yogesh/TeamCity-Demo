@@ -3,7 +3,7 @@
   "output_folder" : "./output",
   "selenium" : {
     "start_process" : false,
-    "start_session" : true,
+    "start_session" : false,
     "host" : "hub.browserstack.com",
     "port" : 80
   },
