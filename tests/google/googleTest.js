@@ -2,7 +2,7 @@ module.exports = {
   "Demo test Google" : function (browser) {
     var sessionID = null;
     browser
-      .session(function(session) { sessionID = session.sessionID })
+      .session(function(session) { sessionID = session.sessionID, console.log(session.sessionID) })
       .url("http://www.google.com")
       .waitForElementVisible('body', 1000)
       .setValue('input[type=text]', 'nightwatch')
