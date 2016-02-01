@@ -1,14 +1,21 @@
-var sessionID = null;
+var sessionId = null;
     
 module.exports = {
   
   after : function(browser) {
-    updateStatus(sessionID, "error", "error once again");
+    updateStatus(sessionId, "error", "error once again");
   },
+
+ before : function(browser) {
+    browser
+      .session(function(session) { 
+            sessionId = session.sessionId;
+            console.log("before test suite SeID : " + session.sessionId); 
+        });
+  },     
 
   "Demo test Google" : function (browser) {
     browser
-      .session(function(session) { sessionID = session.sessionID, console.log(session.sessionID) })
       .url("http://www.google.com")
       .waitForElementVisible('body', 1000)
       .setValue('input[type=text]', 'nightwatch')
@@ -23,7 +30,6 @@ module.exports = {
 function updateStatus(sessionId, newStatus, message) {
     var baseUrl = "https://yogeshpatil2:1qscJEiXnMdazFwW4ft3@www.browserstack.com";
     var sessUpdateUrl = baseUrl + "/automate/sessions/" + sessionId + ".json";
-    var newData = "\"{\"status\":\"" + newStatus + "\", \"reason\":\"" + message + "\"}";
 
     var request = require("request");
     request({uri: sessUpdateUrl, method:"PUT", form:{"status": newStatus,"reason": message}});
