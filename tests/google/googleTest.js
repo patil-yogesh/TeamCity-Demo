@@ -3,7 +3,8 @@ var sessionId = null;
 module.exports = {
   
   after : function(browser) {
-    updateStatus(sessionId, "error", "error once again");
+    /*updateStatus(sessionId, "error", "error once again");*/
+   console.log("After called.");
   },
 
  before : function(browser) {
