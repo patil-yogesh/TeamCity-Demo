@@ -4,7 +4,7 @@ module.exports = {
   
   after : function(browser) {
     /*updateStatus(sessionId, "error", "error once again");*/
-   console.log("After called.");
+   console.log("After called...");
   },
 
  before : function(browser) {
